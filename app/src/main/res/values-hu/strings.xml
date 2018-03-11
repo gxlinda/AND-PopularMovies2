@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieFan</string>
+    <string name="most_popular">Legnépszerűbbek</string>
+    <string name="highest_rated">Legjobbra értékeltek</string>
+    <string name="now_playing">Már a mozikban</string>
+    <string name="favourite">Kedvenceim</string>
+    <string name="no_internet_connection">Ellenőrizd az internetkapcsolatot!</string>
+    <string name="no_movies">Nincsenek megjeleníthető filmek</string>
+    <string name="movie_poster">filmposzter</string>
+    <string name="original_title">Eredeti cím:</string>
+    <string name="title">Cím:</string>
+    <string name="release_date">Megjelenés dátuma:</string>
+    <string name="rating">Értékelés:\u0020</string>
+    <string name="not_available_in_your_language">Magyar nyelvű leírás nem érhető el.</string>
+    <string name="author">Szerző:</string>
+    <string name="reviews">Vélemények</string>
+    <string name="favourite_button">kedvenc_gomb</string>
+    <string name="available_only_in_english">(Csak angol nyelven érhető el)</string>
+    <string name="there_are_no_reviews_yet">Még nincsenek értékelések.</string>
+    <string name="movie_added">Film hozzáadva a Kedvenceimhez</string>
+    <string name="movie_removed">Film eltávolítva a Kedvenceimből</string>
+</resources>

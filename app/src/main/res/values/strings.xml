@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MovieFan</string>
+
+    <string name="most_popular">Most popular</string>
+    <string name="highest_rated">Top rated</string>
+    <string name="now_playing">Now playing</string>
+    <string name="favourite">Favourites</string>
+
+    <string name="no_internet_connection">Please check your internet connection!</string>
+    <string name="no_movies">There are no movies to display</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="original_title">Original title:</string>
+    <string name="title">Title:</string>
+    <string name="release_date">Release date:</string>
+    <string name="rating">Rating:\u0020</string>
+    <string name="movie_transition_name" translatable="false">transition</string>
+    <string name="not_available_in_your_language">Overview is not available in your language</string>
+    <string name="author">Author:</string>
+    <string name="reviews">Reviews</string>
+    <string name="favourite_button">favourite_button</string>
+    <string name="available_only_in_english">(Available only in English)</string>
+    <string name="there_are_no_reviews_yet">There are no reviews yet.</string>
+    <string name="movie_added">Movie added to Favourites</string>
+    <string name="movie_removed">Movie removed from Favourites</string>
+
+</resources>
