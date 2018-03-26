@@ -22,7 +22,6 @@ public class FavouritesProvider extends ContentProvider {
     // Use an int for each URI we will run, this represents the different queries (for UriMatcher)
     private static final int FAVOURITES = 100;
     private static final int FAVOURITE_ID = 101;
-    private static final int FAVOURITE_FILTERED_BY_MOVIE_ID = 102;
 
     private static final UriMatcher sUriMatcher = buildUriMatcher();
 
@@ -45,7 +44,6 @@ public class FavouritesProvider extends ContentProvider {
         return true;
     }
 
-
     // Implement insert to handle requests to insert a single new row of data
     @Override
     public Uri insert(@NonNull Uri uri, ContentValues values) {
@@ -58,7 +56,6 @@ public class FavouritesProvider extends ContentProvider {
 
         switch (match) {
             case FAVOURITES:
-                // Insert new values into the database
                 // Inserting values into favourites table
                 long id = db.insert(FavouritesContract.FavouritesEntry.TABLE_NAME_FAVS, null, values);
                 if (id > 0) {
@@ -79,7 +76,6 @@ public class FavouritesProvider extends ContentProvider {
         // Return constructed uri (this points to the newly inserted row of data)
         return returnUri;
     }
-
 
     // Implement query to handle requests for data by URI
     @Override
@@ -106,16 +102,6 @@ public class FavouritesProvider extends ContentProvider {
                         sortOrder);
                 break;
 
-//            case FAVOURITE_FILTERED_BY_MOVIE_ID:
-//                retCursor = db.query(FavouritesContract.FavouritesEntry.TABLE_NAME_FAVS,
-//                        projection,
-//                        "movie_id = ?",
-//                        selectionArgs,
-//                        null,
-//                        null,
-//                        sortOrder);
-//                break;
-
             // Default exception
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -127,7 +113,6 @@ public class FavouritesProvider extends ContentProvider {
         // Return the desired Cursor
         return retCursor;
     }
-
 
     // Implement delete to delete a single row of data
     @Override
@@ -181,5 +166,4 @@ public class FavouritesProvider extends ContentProvider {
 
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
 }

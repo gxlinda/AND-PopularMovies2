@@ -16,7 +16,7 @@ public class FavouritesContract {
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_FAVS = "favourites";
 
-    //Inner class that defines constant values for the products database table.
+    //Inner class that defines constant values for the database table.
     public static final class FavouritesEntry implements BaseColumns {
 
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_FAVS).build();

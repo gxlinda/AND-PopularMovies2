@@ -77,7 +77,7 @@ public class Review implements Parcelable {
     };
 
     /**
-     * Ctor from Parcel, reads back fields IN THE ORDER they were written
+     * Creator from Parcel, reads back fields IN THE ORDER they were written
      */
     public Review(Parcel pc) {
         id = pc.readString();

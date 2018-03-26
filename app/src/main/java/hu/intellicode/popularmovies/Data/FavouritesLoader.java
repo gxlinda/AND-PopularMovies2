@@ -9,22 +9,20 @@ import android.support.v4.content.AsyncTaskLoader;
  * Created by melinda.kostenszki on 2018.03.11.
  */
 
-public class MovieLoader extends AsyncTaskLoader<Integer> {
+public class FavouritesLoader extends AsyncTaskLoader<Integer> {
     //Tag for log messages
-    private static final String LOG_TAG = MovieLoader.class.getName();
+    private static final String LOG_TAG = FavouritesLoader.class.getName();
     Cursor movieData = null;
     int movieId;
 
     //Query URL
     private Uri uri;
 
-
-    public MovieLoader(Context context, Uri uri, int movieId) {
+    public FavouritesLoader(Context context, Uri uri, int movieId) {
         super(context);
         this.uri = uri;
         this.movieId = movieId;
     }
-
 
     @Override
     protected void onStartLoading() {
@@ -43,5 +41,4 @@ public class MovieLoader extends AsyncTaskLoader<Integer> {
                 null);
         return movieData.getCount();
     }
-
 }

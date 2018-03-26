@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 
 import hu.intellicode.popularmovies.Data.FavouritesContract;
-import hu.intellicode.popularmovies.Data.MovieLoader;
+import hu.intellicode.popularmovies.Data.FavouritesLoader;
 import hu.intellicode.popularmovies.Network_utils.ApiUtil;
 import hu.intellicode.popularmovies.Network_utils.Movie;
 import hu.intellicode.popularmovies.Network_utils.MovieEndpoints;
@@ -87,16 +87,7 @@ public class DetailsActivity extends AppCompatActivity implements
         LinearLayoutManager reviewLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvReview.setLayoutManager(reviewLayoutManager);
         reviewAdapter = new ReviewAdapter(reviews);
-        //reviewAdapter.setOnItemClickListener(this);
         rvReview.setAdapter(reviewAdapter);
-
-        //we restore state after phone rotation
-        if (savedInstanceState != null) {
-            if (savedInstanceState.containsKey("isFavourite")) {
-                isFavourite = savedInstanceState.getBoolean("isFavourite");
-                setFavouriteButton();
-            }
-        }
 
         //init Retrofit service
         videoEndpoints = ApiUtil.getMovieEndpoints();
@@ -104,14 +95,18 @@ public class DetailsActivity extends AppCompatActivity implements
         isConnectedToInternet();
 
         getSupportLoaderManager().initLoader(ID_MOVIE_LOADER, null, this);
-
-        //setFavouriteButton();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean("isFavourite", isFavourite);
+    }
+
+    protected void onRestoreInstanceState(Bundle state) {
+        super.onRestoreInstanceState(state);
+        isFavourite = state.getBoolean("isFavourite");
+        setFavouriteButton();
     }
 
     private void isConnectedToInternet() {
@@ -192,7 +187,6 @@ public class DetailsActivity extends AppCompatActivity implements
                         public void run() {
                             mProgress.setProgress(pStatus);
                             tv.setText(String.valueOf(chosenMovie.getVoteAverage()));
-
                         }
                     });
                     try {
@@ -249,11 +243,10 @@ public class DetailsActivity extends AppCompatActivity implements
             TextView text = toast.getView().findViewById(android.R.id.message);
             text.setTextColor(Color.BLACK);
             toast.show();
+            Utils.haveDeletedAnItem = true;
             isFavourite = false;
             setFavouriteButton();
         }
-
-        getSupportLoaderManager().restartLoader(ID_MOVIE_LOADER, null, this);
     }
 
     public void loadVideos() {
@@ -324,7 +317,7 @@ public class DetailsActivity extends AppCompatActivity implements
     @Override
     public Loader<Integer> onCreateLoader(int id, Bundle args) {
         Uri uri = FavouritesContract.FavouritesEntry.CONTENT_URI;
-        return new MovieLoader(this, uri, MOVIE_ID);
+        return new FavouritesLoader(this, uri, MOVIE_ID);
     }
 
     @Override

@@ -33,6 +33,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
     }
 
     private List<Movie> movies;
+    public List<Movie> movies()//180316
+    {
+        return movies;
+    }
     private OnItemClickListener listener;
 
     public MovieAdapter(List<Movie> movies) {
@@ -167,5 +171,4 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieAdapter
     public Movie getItem(int position) {
         return movies.get(position);
     }
-
 }

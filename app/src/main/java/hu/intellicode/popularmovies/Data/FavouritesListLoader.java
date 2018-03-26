@@ -15,26 +15,19 @@ import hu.intellicode.popularmovies.Network_utils.Movie;
  * Created by melinda.kostenszki on 2018.03.11.
  */
 
-public class MovieListLoader extends AsyncTaskLoader<List<Movie>> {
+public class FavouritesListLoader extends AsyncTaskLoader<List<Movie>> {
 
     //Tag for log messages
-    private static final String LOG_TAG = MovieListLoader.class.getName();
+    private static final String LOG_TAG = FavouritesListLoader.class.getName();
     Cursor movieData = null;
 
     //Query URL
     private Uri uri;
 
-    public MovieListLoader(Context context, Uri uri) {
+    public FavouritesListLoader(Context context, Uri uri) {
         super(context);
         this.uri = uri;
     }
-//
-//    public MovieListLoader(Context context, Uri uri, String Movie_Id) {
-//        super(context);
-//        this.uri = uri;
-//        //this.Movie_Id = Movie_Id;
-//    }
-
 
     @Override
     protected void onStartLoading() {

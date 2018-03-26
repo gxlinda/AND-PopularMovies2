@@ -25,7 +25,7 @@ public class FavouritesDbHelper extends SQLiteOpenHelper {
     }
 
     private void addFavouritesTable(SQLiteDatabase db) {
-        // Create a String that contains the SQL statement to create the products table
+        // Create a String that contains the SQL statement to create the favourites table
         String SQL_CREATE_FAVOURITES_TABLE =  "CREATE TABLE " + FavouritesEntry.TABLE_NAME_FAVS + " ("
                 + FavouritesEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + FavouritesEntry.COLUMN_FAV_MOVIE_ID + " INTEGER NOT NULL, "
