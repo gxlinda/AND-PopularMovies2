@@ -1,9 +1,11 @@
-package hu.intellicode.popularmovies;
+package hu.intellicode.popularmovies.Utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import hu.intellicode.popularmovies.MovieAdapter;
 
 /**
  * Created by melinda.kostenszki on 2018.03.16.

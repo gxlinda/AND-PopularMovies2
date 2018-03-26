@@ -32,6 +32,7 @@ import hu.intellicode.popularmovies.Network_utils.ApiUtil;
 import hu.intellicode.popularmovies.Network_utils.Movie;
 import hu.intellicode.popularmovies.Network_utils.MovieEndpoints;
 import hu.intellicode.popularmovies.Network_utils.MovieResponse;
+import hu.intellicode.popularmovies.Utils.Utils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

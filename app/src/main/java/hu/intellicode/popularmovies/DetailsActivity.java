@@ -36,6 +36,7 @@ import hu.intellicode.popularmovies.Network_utils.Review;
 import hu.intellicode.popularmovies.Network_utils.ReviewResponse;
 import hu.intellicode.popularmovies.Network_utils.Trailer;
 import hu.intellicode.popularmovies.Network_utils.TrailerResponse;
+import hu.intellicode.popularmovies.Utils.Utils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
